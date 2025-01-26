@@ -1,0 +1,67 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+#game-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: 2px solid #000;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#catcher {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 100px;
+    height: 80px;
+    background-image: url('catcher.png'); /* 请确保此路径下有 catcher.png 图片 */
+    background-size: cover;
+    transform: translateX(-50%);
+}
+
+.fortune-bag {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+
+.gold-fortune-bag {
+    background-image: url('gold-fortune-bag.png'); /* 请确保此路径下有 gold-fortune-bag.png 图片 */
+}
+
+
+.silver-fortune-bag {
+    background-image: url('silver-fortune-bag.png'); /* 请确保此路径下有 silver-fortune-bag.png 图片 */
+}
+
+.diamond-fortune-bag {
+    background-image: url('diamond-fortune-bag.png'); /* 请确保此路径下有 diamond-fortune-bag.png 图片 */
+}
+
+
+.ruby-fortune-bag {
+    background-image: url('ruby-fortune-bag.png'); /* 请确保此路径下有 ruby-fortune-bag.png 图片 */
+}
+
+
+.bomb {
+    background-image: url('bomb.png'); /* 请确保此路径下有 bomb.png 图片 */
+}
+
+
+#countdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #000;
+}

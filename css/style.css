@@ -1,0 +1,246 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    overflow: hidden;
+    background: #f8f8f8;
+}
+
+/* 页面通用样式 */
+.page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* 欢迎页样式 */
+#welcome-page {
+    background: #FF4D4F;
+}
+
+.welcome-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.start-button {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(145deg, #FFD700, #FFA500);
+    color: #D4380D;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    letter-spacing: 2px;
+}
+
+.start-button:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+    background: linear-gradient(145deg, #FFE44D, #FFB52E);
+}
+
+.start-button:active {
+    transform: translateX(-50%) scale(0.98);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 游戏页样式 */
+#game-page {
+    background: url('../image/game_background.jpeg') center/cover;
+}
+
+.game-header {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.score, .timer {
+    background: rgba(255,255,255,0.9);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #D4380D;
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#game-canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#player-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    pointer-events: none;
+    overflow: visible;
+}
+
+#player {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    transform-origin: center bottom;
+    transition: left 0.1s linear;
+}
+
+/* 结算弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    padding: 50px;
+    border-radius: 30px;
+    text-align: center;
+    animation: modalPop 0.3s ease;
+    min-width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes modalPop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    color: #D4380D;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.final-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #D4380D;
+    margin: 30px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.2;
+}
+
+.score-number {
+    font-size: 120px;
+    font-weight: bold;
+    display: block;
+    margin: 20px 0;
+    background: linear-gradient(145deg, #FFD700, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Arial', sans-serif;
+}
+
+.replay-button {
+    padding: 18px 45px;
+    font-size: 26px;
+    font-weight: bold;
+    background: linear-gradient(145deg, #FFD700, #FFA500);
+    color: #D4380D;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    letter-spacing: 2px;
+}
+
+.replay-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.3);
+    background: linear-gradient(145deg, #FFE44D, #FFB52E);
+}
+
+.replay-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.bomb-message {
+    color: #ff4444;
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+} 
